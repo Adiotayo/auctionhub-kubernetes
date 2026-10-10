@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Kubernetes credentials
+kubeconfig
+kubeconfig.*
+*.kubeconfig
+
+# Local secrets
+secrets/
+secret.yaml
+*-secret.yaml
+!*-secret-example.yaml
+
+# Python temporary files
+__pycache__/
+*.pyc
+.venv/
+
+# Editor and temporary files
+.vscode/
+*.log
+*.tmp
