@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: auctionhub-config
+
+data:
+  APP_NAME: "AuctionHub"
+  APP_ENV: "production"
+  LOG_LEVEL: "info"

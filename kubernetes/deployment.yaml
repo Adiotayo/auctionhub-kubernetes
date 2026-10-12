@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: auctionhub-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: auctionhub-deployment
+
+  template:
+    metadata:
+      labels:
+        app: auctionhub-deployment
+
+    spec:
+      containers:
+        - name: auctionhub-container
+          image: adiotayo/auctionhub:v1
+
+          ports:
+            - containerPort: 80
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+
+          envFrom:
+            - configMapRef:
+                name: auctionhub-config
